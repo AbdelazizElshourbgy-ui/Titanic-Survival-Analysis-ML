@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 
 st.set_page_config(page_title="Titanic Dashboard", page_icon="📊", layout="wide")
 
-engine = create_engine(st.secrets["postgresql://neondb_owner:npg_AlaixrM8Gw3m@ep-winter-smoke-ayurdpve-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"])
+engine = create_engine(st.secrets["DATABASE_URL"])
 
 def load_data():
     df = pd.read_sql("SELECT * FROM titanic;", engine)

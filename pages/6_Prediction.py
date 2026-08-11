@@ -32,7 +32,7 @@ st.divider()
 # Load Data
 # ==========================
 
-engine = create_engine("postgresql://postgres:postgres@localhost:5432/Titanic")
+engine = create_engine(st.secrets["DATABASE_URL"])
 
 @st.cache_data
 def load_data():

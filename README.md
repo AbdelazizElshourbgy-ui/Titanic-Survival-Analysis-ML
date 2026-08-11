@@ -9,9 +9,7 @@ The project combines data cleaning, exploratory data analysis, visualization, ma
 ## 🚀 Live Demo
 
 **Streamlit App:**  
-`YOUR_STREAMLIT_LINK`
-
-> Replace `YOUR_STREAMLIT_LINK` with your deployed Streamlit URL after deployment.
+[🔗 Titanic Survival Analysis & ML Dashboard](https://titanic-survival-analysis-ml.streamlit.app)
 
 ---
 

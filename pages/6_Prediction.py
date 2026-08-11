@@ -39,6 +39,8 @@ def load_data():
 
     df = pd.read_sql("SELECT * FROM titanic;",engine)
 
+    df.columns = df.columns.str.lower()
+
     # Cleaning
 
     df["age"] = df["age"].fillna(df["age"].median())

@@ -40,6 +40,8 @@ def load_data():
 
     df = pd.read_sql("SELECT * FROM titanic;",engine)
 
+    df.columns = df.columns.str.lower()
+
     df["age"] = df["age"].fillna(df["age"].median())
 
     df["embarked"] = df["embarked"].fillna(df["embarked"].mode()[0])

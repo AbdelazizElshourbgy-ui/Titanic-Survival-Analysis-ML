@@ -27,7 +27,7 @@ st.set_page_config(
 # ==========================
 
 engine = create_engine(
-    "postgresql://postgres:postgres@localhost:5432/Titanic"
+    st.secrets["DATABASE_URL"]
 )
 
 

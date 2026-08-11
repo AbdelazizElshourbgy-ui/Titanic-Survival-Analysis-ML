@@ -4,10 +4,11 @@ from sqlalchemy import create_engine
 
 st.set_page_config(page_title="Titanic Data Description", page_icon="📋", layout="wide")
 
-engine = create_engine("postgresql://postgres:postgres@localhost:5432/Titanic")
+engine = create_engine(st.secrets["DATABASE_URL"])
 
 def load_data():
     df = pd.read_sql("SELECT * FROM titanic;", engine)
+    df.columns = df.columns.str.lower()
     df["age"] = df["age"].fillna(df["age"].median())
     df["embarked"] = df["embarked"].fillna(df["embarked"].mode()[0])
     df = df.drop(columns=["cabin"], errors="ignore").drop_duplicates()
